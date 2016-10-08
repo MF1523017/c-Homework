@@ -12,9 +12,23 @@
 #include <assert.h>
 
 #include "CLibArray.h"
-
+#if 0
+namespace C {
+	class A { int i; };
+};
+#endif
 int main(int argc, char* argv[])
 {
+#if 0
+	//class A { int i; };
+	using C::A;
+	class B
+	{
+		A a;
+	};
+#endif
+	
+
     CArray array;
 	// 不再需要initial，但应该有正确的初始化
     // array_initial(array); 

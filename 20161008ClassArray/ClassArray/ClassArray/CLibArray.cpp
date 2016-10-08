@@ -1,5 +1,5 @@
 #include"CLibArray.h"
-//CArray::CArray(int size,int cap,elementPrt nullptr)
+
 CArray &CArray::checkCap(int cap)
 {
 	if (arrayCapacity > cap)
