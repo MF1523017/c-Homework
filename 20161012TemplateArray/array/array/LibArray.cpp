@@ -21,6 +21,8 @@
 #include <assert.h>
 
 #include "CLibArray.h"
+using std::cout;
+using std::endl;
 int main(int argc,char **argv)
 {
 	CArray <int>array;
@@ -60,10 +62,26 @@ int main(int argc,char **argv)
 	//////////////////////////////////////////////////////////////////////////
 	array3.at(2) = 5;
 	assert(array.compare(array3) == false);
+	////////////////////////////////////////////////////////////////
 	double a[]={ 1,2,3 };
-	CArray <double> dArray(3,6,a);
+	CArray <double> dArray(3,a);
+	CArray<double>dArrayCopy(dArray);//如果不定义合理的拷贝构造函数，系统会自动调用默认拷贝构造函数，
+									//运行结果显示，所有的对象dArray,dArrayCopy,dArray1共用同一个内存地址
+									//如果我们没有定义自己的析构函数，则不会发生错误
+									//如果我们定义了自己的析构函数（与默认析构函数释放资源不同），这导致析构的时候发生错误，
+	///////////////////////////////////////////////////////////////
 
-	std::cout << dArray << std::endl;
+	CArray<double>dArray1=dArray;//这里直接进入拷贝构造函数内
+	dArray1.at(2) = 0;//如果是浅复制，那么dArray1和dArray 同时改变，
+	dArrayCopy = dArray;//这里会进入到拷贝赋值运算符内，如果没有自定义拷贝赋值运算符，则进行浅拷贝
+	dArray = dArray;//自我赋值
+	//////////////////////////////////////////////////////////
+	const CArray<double> constArray(dArray);
+	cout << constArray[2] << endl;
+	CArray<double> notNonstArray = dArray;
+	notNonstArray[0] = 9.0;
+	cout << notNonstArray << endl;
+
 	//////////////////////////////////////////////////////////////////////////
 	// 不再需要destroy，但应该有正确的内存释放
 	// array_destroy(array); 

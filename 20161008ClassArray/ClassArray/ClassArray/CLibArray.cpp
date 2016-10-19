@@ -6,8 +6,8 @@ CArray &CArray::checkCap(int cap)
 		return *this;
 	else
 	{
-		arrayCapacity = cap;
-		elementPrt tmpbuff = new elementType[cap];
+		arrayCapacity = 2*cap;
+		elementPrt tmpbuff = new elementType[arrayCapacity];
 		arraySize = arraySize < arrayCapacity ? arraySize : arrayCapacity;
 		for (int i = 0; i < arraySize; ++i)
 			tmpbuff[i] = buff[i];
@@ -23,7 +23,7 @@ CArray& CArray::append(elementType e)
 	arraySize += 1;
 	return *this;
 }
-elementType &CArray::at(int index)
+elementType &CArray::at(int index)const
 {
 	return buff[index];
 }

@@ -18,7 +18,7 @@ public:
 	CArray &append(elementType e);
 	int size()const { return arraySize; };
 	int capacity()const { return arrayCapacity; };
-	elementType & at(int index);
+	elementType & at(int index)const;
 	CArray& copy(CArray &rst);
 	bool compare(CArray &rst);
 	CArray &insert(int index, elementType e);
