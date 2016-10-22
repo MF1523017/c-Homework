@@ -12,13 +12,14 @@
 	insert(ListNode * current,value)//在current 插入value
 	clear()//删除所有节点
 成员变量：
-	ListNode _node
+	ListNode *_header
+	ListNode *_tail
 	int _NodeNum
 */
 using ElementType = int;
 struct ListNode; 
 using ListPtr = struct  ListNode*;
-using constListPtr = const ListNode *;
+using constListPtr = const struct ListNode *;
 struct ListNode
 {
 	ElementType _value;
@@ -31,17 +32,22 @@ class CPPList
 {
 public:
 	CPPList() :_header(nullptr), _tail(nullptr), _nodeNum(0) {};
+#if 1
 	CPPList(const CPPList &rhs) :_nodeNum(0)
 	{
+
 		ListPtr tmp= rhs._header;
 		while (tmp)
 		{
 			append(tmp->data());
 			tmp = tmp->_next;
 		}
+		
 	}
 	CPPList &operator=(const CPPList & rhs);
+
 	~CPPList() { clear(); };
+#endif
 	void append(ElementType &e);
 	int size()const { return _nodeNum; };
 	const ListPtr begin()const { return _header; }
@@ -54,7 +60,6 @@ public:
 	void insert(ListPtr current, ElementType e);
 	void clear();
 private:
-	//ListPtr _nodes;
 	ListPtr _header;
 	ListPtr _tail;
 	int _nodeNum;

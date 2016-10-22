@@ -1,7 +1,9 @@
 #include"List.h"
+#if 1
 CPPList &CPPList::operator=(const CPPList & rhs)
 {
 	if (this == &rhs)return *this;
+	clear();
 	ListPtr tmp = rhs._header;
 	while (tmp)
 	{
@@ -10,6 +12,7 @@ CPPList &CPPList::operator=(const CPPList & rhs)
 	}
 	return *this;
 }
+#endif
 void CPPList::append(ElementType &e)
 {
 	ListPtr tmp = new ListNode;

@@ -159,10 +159,14 @@ int main(int argc, char** argv)
 	cout << "93, for your insert again" << endl; 
 
 	
-	CPPList *anotherList = new CPPList(*list); 
-	
+	CPPList *anotherList = new CPPList(*list);
+	dump(anotherList);
+	CPPList *copyList(list);//这里的copyList是栈上的指针，不需要delete 
+	*copyList = *anotherList;//这里会调用copy赋值操作符，
+	cout << "test copy=" << endl;
 	delete list; 
 	delete anotherList; 
+	
 	cout << "100, who's your daddy?" << endl; 
 
 	system("pause"); 
