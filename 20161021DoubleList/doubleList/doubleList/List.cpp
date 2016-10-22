@@ -1,5 +1,4 @@
 #include"List.h"
-#if 1
 CPPList &CPPList::operator=(const CPPList & rhs)
 {
 	if (this == &rhs)return *this;
@@ -12,12 +11,11 @@ CPPList &CPPList::operator=(const CPPList & rhs)
 	}
 	return *this;
 }
-#endif
 void CPPList::append(ElementType &e)
 {
 	ListPtr tmp = new ListNode;
 	tmp->_value = e;
-	if (isEmpty()) {//¿Õ±í
+	if (isEmpty()) {//ç©ºè¡¨
 		_header = _tail = tmp;
 		_header->_prev = nullptr;
 		_tail->_next = nullptr;
@@ -31,48 +29,34 @@ void CPPList::append(ElementType &e)
 	}
 	_nodeNum++;
 }
-#if 0
-ListPtr CPPList::_findPre(ListPtr current)
-{
-	ListPtr tmp = _header;
-	while (tmp)
-	{
-		if (tmp->_next == current)
-		{
-			return tmp;
-		}
-		tmp = tmp->_next;
-	}
-	return nullptr;
-}
-#endif
+
 void CPPList::remove(ListPtr current)
 {
 
-	if (current == end()|| isEmpty())//¿Õ
+	if (current == end()|| isEmpty())//ç©º
 		return;
-	else {//·Ç¿Õ
-		if (size()==1)//Í·Î²Í¬½Úµã
+	else {//éç©º
+		if (size()==1)//å¤´å°¾åŒèŠ‚ç‚¹
 		{
 			delete current;
 			_header = _tail = nullptr;
 			
 		}
-		else {//´óÓÚÒ»¸ö½Úµã
-			if (current == _header)//Í·½Úµã
+		else {//å¤§äºä¸€ä¸ªèŠ‚ç‚¹
+			if (current == _header)//å¤´èŠ‚ç‚¹
 			{
 				_header = current->_next;
 				_header->_prev = nullptr;
 				delete current;
 			}
 			else {
-				if (current == _tail)//Î²½Úµã
+				if (current == _tail)//å°¾èŠ‚ç‚¹
 				{
 					_tail = current->_prev;
 					_tail->_next = nullptr;
 					delete current;
 				}
-				else {//·ÇÍ··ÇÎ²½Úµã
+				else {//éå¤´éå°¾èŠ‚ç‚¹
 					current->_prev->_next = current->_next;
 					current->_next->_prev = current->_prev;
 					delete current;
@@ -86,28 +70,28 @@ void CPPList::insert(ListPtr current, ElementType e)
 {
 	ListPtr tmp = new ListNode;
 	tmp->_value = e;
-	if (isEmpty())//¿ÕÁ´±í
+	if (isEmpty())//ç©ºé“¾è¡¨
 	{
 		_tail=_header = tmp;
 		_header->_prev = nullptr;
 		_header->_next = current;
 	}
-	else {//·Ç¿Õ
-		if (current == _header )//Í·½Úµã
+	else {//éç©º
+		if (current == _header )//å¤´èŠ‚ç‚¹
 		{
 			 _header = tmp;
 			_header->_prev = nullptr;
 			_header->_next = current;
 			
 		}
-		else {//·ÇÍ·½Úµã
-			if (current == end())//Î²½Úµã
+		else {//éå¤´èŠ‚ç‚¹
+			if (current == end())//å°¾èŠ‚ç‚¹
 			{
 				append(e);
 				delete tmp;
 				_nodeNum--;
 			}
-			else{//·ÇÍ··ÇÎ²½Úµã
+			else{//éå¤´éå°¾èŠ‚ç‚¹
 				current->_prev->_next = tmp;
 				tmp->_prev = current->_prev;
 				tmp->_next = current;
@@ -121,7 +105,7 @@ void CPPList::clear()
 	ListPtr tmp = _header;
 	while (tmp)
 	{
-		ListPtr current = tmp->_next;//±£´æÏÂÒ»½Úµã
+		ListPtr current = tmp->_next;//ä¿å­˜ä¸‹ä¸€èŠ‚ç‚¹
 		delete tmp;
 		tmp = current;
 	}
