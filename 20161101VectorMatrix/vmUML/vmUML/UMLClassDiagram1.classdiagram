@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4724a3bc-82d2-4058-8bd7-9407c2a6053a" name="UMLClassDiagram1" linkedPackageId="5776f2a3-5808-4031-a982-b671f468d332" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="26d4b94a-a8c9-4eea-93f1-61f51e8dd339" name="Vector" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3cb6ec47-508b-4acb-ab94-e3f2ed767de2" />
+        <targetEnds>
+          <association Id="de22ffa3-5fbd-4ede-8c32-d003b21827eb" isDerived="false" sourceEndRoleName="Vector" targetEndRoleName="Matrix" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4ac9ecdf-519e-432e-be9e-ccab90b1569f" LastKnownName="Matrix" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="77c35e94-e48c-4126-af68-da2d8a831c07" name="Vector" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f2801f15-de97-4ab1-b5fe-e59fa2b392c7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3f0f6058-dd6f-4150-87b5-d67a17bc6d05" name="Matrix" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="5802a63b-4c68-4a37-9e8d-48c23c24cc0b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c2b75e67-17c4-4ef7-bd50-fa78e45bb58e" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="95a08262-66aa-4ca9-888e-9be69364c8f7" name="_size" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d3c41b88-7a10-4021-bb0a-b3e66aad4ba5" />
+          </property>
+          <property Id="435c3bdb-7833-4f36-ab05-5bf3295c3626" name="_buff" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="64bf4c1c-0c76-455f-83a7-499a9dd2e8ea" />
+          </property>
+          <property Id="4e791c85-328c-4410-a697-c48fb4037caa" name="static_INVALID_VECTOR" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7aeb4b40-c499-41b8-a1cf-7bc77bca24f7" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a9761f8e-da06-42c4-8ce5-6471841fc1a3" name="Vector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="365caf8e-63ea-4aa7-ad7f-5585c7725a25" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="24f0dbcd-1e07-4796-966c-24a5132bd5d8" name="int len" direction="In" isUnique="false">
+                  <elementDefinition Id="f264066b-d331-4230-8fca-b7c86ee79a78" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d05de2e3-3311-405b-9753-a77e43c717c7" name="typeValue a[]" direction="In" isUnique="false">
+                  <elementDefinition Id="8aacdf4b-1c30-4755-aa9b-e366b22ced08" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7e732257-2c3d-4cb8-a1e5-59fdf8a1bb56" name="operator==" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="95ab5c44-bd45-4776-8de1-e5dc11d9dbfa" />
+          </operation>
+          <operation Id="b4ac9050-164b-4cc0-bc3f-07893470b1dc" name="operator!=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e44a3c1f-82c8-4a4d-a36f-20ee2fd32039" />
+          </operation>
+          <operation Id="c616c39a-0e54-489c-91fa-1a66c74b320c" name="operator+" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e740c461-df54-4fc2-892e-78eb0933dbde" />
+          </operation>
+          <operation Id="9169869b-72c1-4742-9f71-222dc1baf910" name="operator*" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a17c94a0-9b13-4594-84f9-d48961bb874c" />
+          </operation>
+          <operation Id="f62b8690-de04-4b8b-9501-c551922a3476" name="operator-" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3f123a0f-c151-43f2-99b6-78bd5918c29c" />
+          </operation>
+          <operation Id="96c4a9cb-ade7-44ac-bf43-304868610dbe" name="operator=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec9c33ab-5e47-46bf-860a-59782397f66c" />
+          </operation>
+          <operation Id="7f8ba3e5-d2f7-41e9-bfa1-a83d08366182" name="operator+=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a090e43-4f47-4d9f-a5a4-c0813676141d" />
+          </operation>
+          <operation Id="29c6a849-dfbe-469e-bc06-5bcddac6cf7d" name="operator-=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e3abf751-c7d5-42e3-9ebd-f36158bfe250" />
+          </operation>
+          <operation Id="29c3bcd3-375f-48c3-80fe-0da86512f432" name="Vector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="46f0d225-4b62-42f6-afae-bd6cc8eb3545" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="195aaae9-8bc5-4441-a5c7-d894ded27a3c" name="int len" direction="In" isUnique="false">
+                  <elementDefinition Id="0f811e36-a9fe-4607-b725-e59555f1dc09" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="13db642f-dacd-4d63-985b-3c952123a22f" name="valueType v" direction="In" isUnique="false">
+                  <elementDefinition Id="e4c2187d-7245-4d5e-9cff-da1f946ab2b0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="15891a3f-f592-4faf-9395-7e0267398f95" name="operator[]" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="128f7bcd-aaf3-44fc-9d63-8516486259ae" />
+          </operation>
+          <operation Id="d7ce2635-7214-410f-9163-e091e918d077" name="size" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="864c0b87-6943-4f5e-a6e7-a52010aab0d0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4ac9ecdf-519e-432e-be9e-ccab90b1569f" name="Matrix" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e94340c5-6de0-4aad-ac4e-ca1344bfd6c5" />
+        <ownedAttributesInternal>
+          <property Id="fa1b2014-3ba7-4e1d-95de-900dd176a1f9" name="_rows" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="79e3f1dc-8fcb-4c4d-b118-3601d55f41c4" />
+          </property>
+          <property Id="f6f78b71-7d5a-45bc-89dd-cc20b7b09942" name="_vectors" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3ddb8cb5-a834-46c9-b803-acfa36076687" />
+          </property>
+          <property Id="2e74d932-1d92-4d6f-9169-a94bba15edce" name="static_INVALID_MATRIX" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3605c457-40e8-4a62-a9ec-943da71cf141" />
+          </property>
+          <property Id="3a255a70-05fb-4df7-a10d-5f108385953b" name="_cols" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bab32b08-75de-4e52-bc73-11f36f432743" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e2d1e1b8-ce38-416c-ae8d-4a2d72784201" name="Matrix" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="afbb8161-3f16-414c-bb32-cb98643502a0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2a8abc62-209b-449c-a1e3-96d770befbc8" name="int rows" direction="In" isUnique="false">
+                  <elementDefinition Id="707ea278-ac39-4d15-b35e-c3a8ab31fc0b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b925627b-5e2d-464c-a9ef-cbfa2e083ca9" name="int cols" direction="In" isUnique="false">
+                  <elementDefinition Id="97335e6d-98d1-4074-aa85-64817735cabc" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6d9f7c18-79e1-42e8-9845-b1893ec80008" name="valueType a[]" direction="In" isUnique="false">
+                  <elementDefinition Id="e1255b20-d94f-4bef-b254-02bfda07d013" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b8cccae0-153d-4ada-a8ed-b701e4a70d38" name="operator==" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e60326da-4127-452c-998e-e047cef631ed" />
+          </operation>
+          <operation Id="19c052aa-a89a-487b-a569-1dab07a8f326" name="operator!=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="72bb206b-c109-41e7-a4ba-18e5e27984f6" />
+          </operation>
+          <operation Id="747f0680-8366-4f1e-a00e-ae4885ab7078" name="operator+" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="101b228b-9bd3-4e42-94d6-df68ff4a24fc" />
+          </operation>
+          <operation Id="16e48275-1285-4d3c-9b9b-13dd7d0ca815" name="operator*" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d5a1c72-e16b-4114-9d45-57fb29686a1f" />
+          </operation>
+          <operation Id="6b3af7d6-d732-408f-998c-67480cc874ca" name="operator-" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e02ab5a-4cea-4c51-b2e6-f859fa27350b" />
+          </operation>
+          <operation Id="fdf792ed-b414-4207-a8ca-aa9be4c83110" name="operator=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d31b51e9-0769-42a2-9acc-691d090347c3" />
+          </operation>
+          <operation Id="2972cbfe-97af-4430-a722-9af7284f73af" name="Matrix" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="86a931bf-dd57-428f-8cab-b488a0b940a1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="df74ac51-ef6a-473b-9b1c-433272f2d02c" name="int rows" direction="In" isUnique="false">
+                  <elementDefinition Id="480cef2c-b306-496b-ac40-c2e9dd9cb476" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="56a9f0e6-9704-4338-b618-44981e98e8c8" name="int cols" direction="In" isUnique="false">
+                  <elementDefinition Id="239eba84-177d-4565-83e2-beca7e0a199e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="309bbdd8-8a5f-465a-815c-107eaef8a89a" name="valueType v" direction="In" isUnique="false">
+                  <elementDefinition Id="213a0e40-9822-41c7-bd3d-581b38a64221" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dccb4217-5b28-4388-91fa-322ad3ee4518" name="operator[]" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="91642937-20ad-47c1-91c1-0ec4d1cf0c48" />
+          </operation>
+          <operation Id="5bbf699c-2770-4ea4-ad4a-40156f7541b7" name="trans" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cbac610c-9af4-47cf-9c0c-766ee5990780" />
+          </operation>
+          <operation Id="fef99fa5-0834-4bc1-aaa5-26c7815f136d" name="rows" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d7712ae-a7e6-4dff-b85b-350d69ee129e" />
+          </operation>
+          <operation Id="c87d2e35-8dfb-4791-8c61-efd388e32f60" name="cols" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b6f3e9bf-c899-4a27-8f3e-035f850153ed" />
+          </operation>
+          <operation Id="942c4f7d-c91a-4a38-82f9-cb9b88b12f98" name="_clear" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9cb3b98c-63fc-49a3-98d9-d396e4c1bce8" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="5776f2a3-5808-4031-a982-b671f468d332" name="vmUML">
+    <elementDefinition Id="ceda5d4f-91c7-4fa0-a01d-3bff1422e4ce" />
+    <profileInstances>
+      <packageHasProfileInstances Id="cd28ecbc-07e2-4031-9ed0-d6e37c028836">
+        <profileInstance Id="cc045556-1964-4aba-a035-f87ea7f225cc" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f4244c18-d665-4dff-b544-1798d3f04792">
+        <profileInstance Id="3414b626-0d80-45cf-a453-0856ed9487f2" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
