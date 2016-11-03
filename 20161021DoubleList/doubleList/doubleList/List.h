@@ -1,17 +1,17 @@
 #pragma once
 /*
-ÀàÃûÎªCPPList
-²Ù×÷£º
-	append(value)//ÔÚÄ©Î²×·¼ÓÒ»¸öÔªËØ
-	size()//·µ»ØlistÖÐµÄÔªËØ¸öÊý
-	begin()//°üº¬listµÄµÚÒ»¸öÔªËØ
-	end()//½áÊø·û
-	next(ListNode * current)//Ö¸ÏòcurrentºóÒ»¸öÔªËØdµØÖ·
-	data()//·µ»Ø¸Ã½ÚµãµÄÊý¾Ý
-	remove(ListNode * current)//É¾³ý¸Ã½Úµã
-	insert(ListNode * current,value)//ÔÚcurrent ²åÈëvalue
-	clear()//É¾³ýËùÓÐ½Úµã
-³ÉÔ±±äÁ¿£º
+ç±»åä¸ºCPPList
+æ“ä½œï¼š
+	append(value)//åœ¨æœ«å°¾è¿½åŠ ä¸€ä¸ªå…ƒç´ 
+	size()//è¿”å›žlistä¸­çš„å…ƒç´ ä¸ªæ•°
+	begin()//åŒ…å«listçš„ç¬¬ä¸€ä¸ªå…ƒç´ 
+	end()//ç»“æŸç¬¦
+	next(ListNode * current)//æŒ‡å‘currentåŽä¸€ä¸ªå…ƒç´ dåœ°å€
+	data()//è¿”å›žè¯¥èŠ‚ç‚¹çš„æ•°æ®
+	remove(ListNode * current)//åˆ é™¤è¯¥èŠ‚ç‚¹
+	insert(ListNode * current,value)//åœ¨current æ’å…¥value
+	clear()//åˆ é™¤æ‰€æœ‰èŠ‚ç‚¹
+æˆå‘˜å˜é‡ï¼š
 	ListNode *_header
 	ListNode *_tail
 	int _NodeNum
@@ -36,7 +36,7 @@ class CPPList
 {
 public:
 	CPPList() :_header(nullptr), _tail(nullptr), _nodeNum(0) {};
-#if 1
+
 	CPPList(const CPPList &rhs) :_nodeNum(0)
 	{
 
@@ -49,13 +49,11 @@ public:
 		
 	}
 	CPPList &operator=(const CPPList & rhs);
-
 	~CPPList() { clear(); };
-#endif
 	void append(ElementType &e);
 	int size()const { return _nodeNum; };
-	const ListPtr begin()const { return _header; }
-	const ListPtr end()const { 
+	ListPtr begin()const { return _header; }
+	ListPtr end()const { 
 		return nullptr;
 	 }
 	constListPtr next(constListPtr current)const  { return current->_next; }
