@@ -34,7 +34,6 @@ private:
 	int _size;
 	ElementPtr _buff;
 	void _clear();
-	
 };
 Vector operator +( Vector &lhs,ElementType e);
 Vector operator -( Vector &lhs, ElementType e);
