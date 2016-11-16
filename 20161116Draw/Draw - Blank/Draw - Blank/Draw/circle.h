@@ -12,3 +12,9 @@ private:
 	int _radius;
 
 };
+class CircleFactory :public FigureFactory
+{
+public:
+	CircleFactory(int id, const string &name) :FigureFactory(id, name) {};
+	virtual Figure *createFigure(std::istream &is);
+};

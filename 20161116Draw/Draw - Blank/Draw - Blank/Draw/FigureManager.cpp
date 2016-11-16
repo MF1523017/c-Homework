@@ -2,6 +2,7 @@
 
 #include "FigureManager.h"
 #include "BlackBoard.h"
+#include"figure.h"
 #include"line.h"
 #include"circle.h"
 #include"rectangle.h"
@@ -10,7 +11,7 @@ using std::cout;
 
 void FigureManager::input(std::istream &is)
 {
-    // 1、打印菜单，让用户选择输入图形
+	// 1、打印菜单，让用户选择输入图形
 	// 菜单格式为
 	// input type(1 : Circle, 2 : Line, 3 : Rectangle, 0 : Quit)
 
@@ -19,15 +20,35 @@ void FigureManager::input(std::istream &is)
 
 	// 2、用户输入数字(1/2/3/0)选择后，根据不同的图形，提示输入图形的参数
 	// 其中圆的参数依次为圆心x、y、半径，因此包含提示的输入代码类似以下结果
-
+	while (1) {
+		cout << "input type(";
+		for (auto item : _figuresNames)
+		{
+			cout << item.first << ": " << item.second << ",";
+		}
+		cout << "0 : Quit)";
+		int choice;
+		is >> choice;
+		if (choice == 0)
+			break;
+		for (auto itemF : _facs)
+		{
+			if (itemF->getId() == choice)
+			{
+				_figures.push_back(itemF->createFigure(is));
+			}
+		}
+	}
+#if 0
+	//简单工厂模式，不利于拓展，拓展会改变原有逻辑
 	while (1) {
 		int choice;
 		cout << "input type(1 : Circle, 2 : Line, 3 : Rectangle, 0 : Quit)";
-		is>> choice;
+		is >> choice;
 		switch (choice)
 		{
 		case 1:
-			int _x,_y,_radius;
+			int _x, _y, _radius;
 			std::cout << "Center X: ";
 			is >> _x;
 
@@ -68,7 +89,8 @@ void FigureManager::input(std::istream &is)
 		}
 		if (choice == 0)
 			break;
-		
+
+#endif
 #if 0
 		std::cout << "Center X: ";
 		is >> _x;
@@ -105,18 +127,17 @@ void FigureManager::input(std::istream &is)
 		std::cout << "Bottom: ";
 		is >> _bottom;
 #endif
-	}
-	// 3，输入好参数后，将图形保存下来，用于之后绘制
 
-	// 4，回到1，继续打印菜单，直到用户选择0，退出input函数
+		// 3，输入好参数后，将图形保存下来，用于之后绘制
 
+		// 4，回到1，继续打印菜单，直到用户选择0，退出input函数
 
 }
 
 void FigureManager::display(BlackBoard &board)
 {
 	// 将所有input中输入的图形在这里依次画出
-    
+   
 	for (auto item : _figures)
 		(*item).draw(board);
 	// 借助board提供的DrawCircle和DrawLine函数画图，举例，画一个圆心在30,30位置，半径为100的圆
@@ -133,7 +154,13 @@ void FigureManager::display(BlackBoard &board)
 // 如果没有，则忽略
 void InitiateFigureManager()
 {
-
+	FigureManager::handle().setIDName(2,"Line");
+	FigureManager::handle().addFigure(new LineFactory(2, "line"));
+	FigureManager::handle().setIDName(1, "Circle");
+	FigureManager::handle().addFigure(new CircleFactory(1, "Circle"));
+	FigureManager::handle().setIDName(3, "Rectangle");
+	FigureManager::handle().addFigure(new RectangleFactory(3, "Rectangle"));
+	//FigureManager::handle()._figures.push_back(new LineFactory("Line"));
 }
 
 

@@ -12,3 +12,9 @@ private:
 	int _right;
 	int _bottom;
 };
+class RectangleFactory :public FigureFactory
+{
+public:
+	RectangleFactory(int id, const string &name) :FigureFactory(id, name) {}
+	virtual Figure *createFigure(std::istream &is);
+};
