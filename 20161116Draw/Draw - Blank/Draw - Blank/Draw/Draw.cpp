@@ -52,7 +52,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	// 1、从test.txt文件输入，以方便调试时键盘输入费时。
 	// 2、从命令行输入，以帮助在没有完全编写好代码时，无法用test.txt测试
 
-#if 0
+#if 1
 	std::ifstream in("test.txt");  
 	if (! in.is_open())  
 	{ 
