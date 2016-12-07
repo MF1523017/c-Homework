@@ -12,22 +12,32 @@ class FigureManager
 {
 public:
 	
-	static FigureManager &handle()
+	static FigureManager &handle()//单例模式
 	{
 		static FigureManager manager; 
 		return manager; 
 	}
     
     // FigureManager类析构函数
-    virtual ~FigureManager() { }
+    virtual ~FigureManager() { 
+		for (vector<Figure *>::iterator b = _figures.begin(); b != _figures.end(); ++b)
+		{
+			delete (*b);
+			(*b) = nullptr;
+		}
+		for (vector<FigureFactory *>::iterator b = _facs.begin(); b != _facs.end(); ++b)
+		{
+			delete (*b);
+			(*b) = nullptr;
+		}
+	}
     // FigureManager类接口.
-public:
 	void input(std::istream &is); 
     void display(BlackBoard &board); 
-	void setIDName(int id,const string &name)
-	{
-		_figuresNames.insert(IDName::value_type(id,name));
-	}
+	//void setIDName(int id,const string &name)
+	//{
+	//	_figuresNames.insert(IDName::value_type(id,name));
+	//}
 	void addFigure(FigureFactory *tmp)
 	{
 		_facs.push_back(tmp);
@@ -36,8 +46,8 @@ private:
 
 	vector<Figure*>_figures;
 	vector<FigureFactory*>_facs;
-	typedef map<int, string>IDName;
-	IDName _figuresNames;
+	//typedef map<int, string>IDName;
+	//IDName _figuresNames;
 }; // class FigureManager类定义结束.
 
 void InitiateFigureManager(); 

@@ -20,24 +20,34 @@ void FigureManager::input(std::istream &is)
 
 	// 2、用户输入数字(1/2/3/0)选择后，根据不同的图形，提示输入图形的参数
 	// 其中圆的参数依次为圆心x、y、半径，因此包含提示的输入代码类似以下结果
-	while (1) {
-		cout << "input type(";
-		for (auto item : _figuresNames)
-		{
-			cout << item.first << ": " << item.second << ",";
-		}
-		cout << "0 : Quit)";
-		int choice;
-		is >> choice;
+	cout << "input type(";
+	for (auto item : _facs)
+	{
+		cout << (*item).getId() << ": " << (*item).getName() << ",";
+	}
+	cout << "0 : Quit)";
+	int choice;
+	while (is>>choice) {
+		
+		//int choice;
+		//is >> choice;
 		if (choice == 0)
 			break;
 		for (auto itemF : _facs)
 		{
 			if (itemF->getId() == choice)
 			{
-				_figures.push_back(itemF->createFigure(is));
+				Figure *newF = itemF->createFigure();
+				newF->input(is);
+				_figures.push_back(newF);
 			}
 		}
+		cout << "input type(";
+		for (auto item : _facs)
+		{
+			cout << (*item).getId() << ": " << (*item).getName() << ",";
+		}
+		cout << "0 : Quit)";
 	}
 #if 0
 	//简单工厂模式，不利于拓展，拓展会改变原有逻辑
@@ -154,11 +164,12 @@ void FigureManager::display(BlackBoard &board)
 // 如果没有，则忽略
 void InitiateFigureManager()
 {
-	FigureManager::handle().setIDName(2,"Line");
-	FigureManager::handle().addFigure(new LineFactory(2, "line"));
-	FigureManager::handle().setIDName(1, "Circle");
+	//FigureManager::handle().setIDName(2,"Line");
 	FigureManager::handle().addFigure(new CircleFactory(1, "Circle"));
-	FigureManager::handle().setIDName(3, "Rectangle");
+	FigureManager::handle().addFigure(new LineFactory(2, "line"));
+	//FigureManager::handle().setIDName(1, "Circle");
+	
+	//FigureManager::handle().setIDName(3, "Rectangle");
 	FigureManager::handle().addFigure(new RectangleFactory(3, "Rectangle"));
 	//FigureManager::handle()._figures.push_back(new LineFactory("Line"));
 }
