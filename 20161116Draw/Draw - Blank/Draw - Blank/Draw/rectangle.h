@@ -22,7 +22,7 @@ class RectangleFactory :public FigureFactory
 {
 public:
 	RectangleFactory(int id, const string &name) :FigureFactory(id, name) {}
-	virtual Figure *createFigure();
+	virtual shared_ptr<Figure> createFigure();
 	virtual ~RectangleFactory()
 	{
 		std::cout << "delete RectangleFactory!" << std::endl;

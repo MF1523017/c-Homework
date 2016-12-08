@@ -21,7 +21,7 @@ class LineFactory :public FigureFactory
 {
 public:
 	LineFactory(int id,const string &name) :FigureFactory(id,name){}
-	virtual Figure *createFigure();
+	virtual shared_ptr<Figure> createFigure();
 	virtual ~LineFactory()
 	{
 		std::cout << "delete LineFactory!" << std::endl;

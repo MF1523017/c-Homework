@@ -37,7 +37,7 @@ void FigureManager::input(std::istream &is)
 		{
 			if (itemF->getId() == choice)
 			{
-				Figure *newF = itemF->createFigure();
+				shared_ptr<Figure> newF (itemF->createFigure());
 				newF->input(is);
 				_figures.push_back(newF);
 			}
@@ -165,12 +165,12 @@ void FigureManager::display(BlackBoard &board)
 void InitiateFigureManager()
 {
 	//FigureManager::handle().setIDName(2,"Line");
-	FigureManager::handle().addFigure(new CircleFactory(1, "Circle"));
-	FigureManager::handle().addFigure(new LineFactory(2, "line"));
+	FigureManager::handle().addFigure(shared_ptr<FigureFactory>(new CircleFactory(1, "Circle")));
+	FigureManager::handle().addFigure(shared_ptr<FigureFactory>(new LineFactory(2, "line")));
 	//FigureManager::handle().setIDName(1, "Circle");
 	
 	//FigureManager::handle().setIDName(3, "Rectangle");
-	FigureManager::handle().addFigure(new RectangleFactory(3, "Rectangle"));
+	FigureManager::handle().addFigure(shared_ptr<FigureFactory>(new RectangleFactory(3, "Rectangle")));
 	//FigureManager::handle()._figures.push_back(new LineFactory("Line"));
 }
 

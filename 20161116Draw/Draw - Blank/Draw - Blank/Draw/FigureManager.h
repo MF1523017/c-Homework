@@ -20,15 +20,16 @@ public:
     
     // FigureManager类析构函数
     virtual ~FigureManager() { 
-		for (vector<Figure *>::iterator b = _figures.begin(); b != _figures.end(); ++b)
+		for (vector<shared_ptr<Figure>>::iterator b = _figures.begin(); b != _figures.end(); ++b)
 		{
-			delete (*b);
-			(*b) = nullptr;
+		/*	delete (*b);
+			(*b) = nullptr;*/
+			//使用只能指针之后，会在程序结束的时候自动分配内存
 		}
-		for (vector<FigureFactory *>::iterator b = _facs.begin(); b != _facs.end(); ++b)
+		for (vector<shared_ptr<FigureFactory>>::iterator b = _facs.begin(); b != _facs.end(); ++b)
 		{
-			delete (*b);
-			(*b) = nullptr;
+		/*	delete (*b);
+			(*b) = nullptr;*/
 		}
 	}
     // FigureManager类接口.
@@ -38,14 +39,14 @@ public:
 	//{
 	//	_figuresNames.insert(IDName::value_type(id,name));
 	//}
-	void addFigure(FigureFactory *tmp)
+	void addFigure(shared_ptr<FigureFactory> tmp)
 	{
 		_facs.push_back(tmp);
 	}
 private:
 
-	vector<Figure*>_figures;
-	vector<FigureFactory*>_facs;
+	vector<shared_ptr<Figure>>_figures;
+	vector<shared_ptr<FigureFactory>>_facs;
 	//typedef map<int, string>IDName;
 	//IDName _figuresNames;
 }; // class FigureManager类定义结束.

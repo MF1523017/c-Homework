@@ -22,7 +22,7 @@ class CircleFactory :public FigureFactory
 {
 public:
 	CircleFactory(int id, const string &name) :FigureFactory(id, name) {};
-	virtual Figure *createFigure();
+	virtual shared_ptr<Figure> createFigure();
 	virtual ~CircleFactory()
 	{
 		std::cout << "delete CircleFactory!" << std::endl;

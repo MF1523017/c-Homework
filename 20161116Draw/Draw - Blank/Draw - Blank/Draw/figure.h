@@ -3,8 +3,10 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<memory>
 using std::string;
 using std::vector;
+using std::shared_ptr;
 class Figure
 {
 public:
@@ -22,7 +24,7 @@ public:
 	FigureFactory(int id, const string name) :_id(id), _name(name) {};
 	virtual const string &getName()const { return _name; };
 	virtual const int &getId()const { return _id; }
-	virtual Figure *createFigure() =0;
+	virtual shared_ptr<Figure> createFigure() =0;
 	virtual ~FigureFactory()
 	{
 		std::cout << "delete FigureFactory!" << std::endl;

@@ -20,17 +20,8 @@ void Rectangle::input(std::istream &is)
 	std::cout << "Bottom: ";
 	is >> _bottom;
 }
-Figure *RectangleFactory::createFigure()
+shared_ptr<Figure> RectangleFactory::createFigure()
 {
-	/*int _left, _top, _right, _bottom;
-	std::cout << "Left: ";
-	is >> _left;
-	std::cout << "Top: ";
-	is >> _top;
-
-	std::cout << "Right: ";
-	is >> _right;
-	std::cout << "Bottom: ";
-	is >> _bottom;*/
-	return new Rectangle;
+	
+	return shared_ptr<Figure>(new Rectangle);
 }
