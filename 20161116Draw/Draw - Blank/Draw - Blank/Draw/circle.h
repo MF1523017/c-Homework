@@ -8,6 +8,10 @@ public:
 	Circle(int x, int y, int radius) :_x(x), _y(y), _radius(radius) {};
 	virtual void draw(BlackBoard &board)const;
 	virtual void input(std::istream &is);
+	virtual ~Circle()
+	{
+		std::cout << "delete Circle!" << std::endl;
+	}
 private:
 	int _x;
 	int _y;
@@ -19,4 +23,8 @@ class CircleFactory :public FigureFactory
 public:
 	CircleFactory(int id, const string &name) :FigureFactory(id, name) {};
 	virtual Figure *createFigure();
+	virtual ~CircleFactory()
+	{
+		std::cout << "delete CircleFactory!" << std::endl;
+	}
 };

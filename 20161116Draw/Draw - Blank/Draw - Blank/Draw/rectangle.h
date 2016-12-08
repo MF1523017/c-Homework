@@ -8,6 +8,10 @@ public:
 	Rectangle(int left, int top, int right, int bottom) :_left(left), _top(top), _right(right), _bottom(bottom) {};
 	virtual void draw(BlackBoard &board) const;
 	virtual void input(std::istream &is);
+	virtual ~Rectangle()
+	{
+		std::cout << "delete Rectangle!" << std::endl;
+	}
 private:
 	int _left;
 	int _top;
@@ -19,4 +23,8 @@ class RectangleFactory :public FigureFactory
 public:
 	RectangleFactory(int id, const string &name) :FigureFactory(id, name) {}
 	virtual Figure *createFigure();
+	virtual ~RectangleFactory()
+	{
+		std::cout << "delete RectangleFactory!" << std::endl;
+	}
 };
