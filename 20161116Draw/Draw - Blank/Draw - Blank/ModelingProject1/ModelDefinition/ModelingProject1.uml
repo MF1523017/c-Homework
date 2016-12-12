@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="20fc8c07-3250-4536-ac85-1411eec51b40"
   name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -21,14 +21,56 @@
     <packageHasNamedElement>
       <class
         Id="4d4172d0-4c34-4793-9532-20bf2339a784"
-        name="Factory"
-        isAbstract="false"
+        name="FigureFactory"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="7acb6cf0-cde1-4071-9e8d-287cbc13b339"
+            name="_id"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="86faca52-9df9-425c-90ff-8aa15c586114"
+            name="_name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="6ad8244c-d538-407b-b77d-34ea06e656f3"
             name="createFigure"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f1785cc7-466a-424d-8787-67721bbba81e"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8bc99702-dce9-4f24-8131-9aed09c0e910"
+            name="getName"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -41,13 +83,21 @@
       <class
         Id="d1eebb1d-0b76-4daa-bb5a-120c8e05cebd"
         name="Figure"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <ownedOperationsInternal>
           <operation
             Id="ceb7c393-43f8-4c1f-82c9-51c896713066"
-            name="draw"
+            name="pure virtual draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="45849d0d-111e-4a1b-be89-0766b9803d4e"
+            name="pure virtual input"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -63,6 +113,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="11c8b309-087c-4d52-ab11-1caa6ba504bd">
+            <classMoniker
+              Id="fb77274c-8aaf-4d82-b434-8ef6b8ce1c58"
+              LastKnownName="LineFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="a0b88930-8685-4c69-a511-26b0d12ae9fc"
@@ -77,6 +136,7 @@
           <property
             Id="c70fb698-8b9b-4d1a-9219-15961a7b34f7"
             name="_x1"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -88,6 +148,7 @@
           <property
             Id="92f05228-4eb7-43ca-a313-738605c36aff"
             name="_y1"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -99,6 +160,7 @@
           <property
             Id="cf04e52d-70ff-42ed-96d8-9bb754ce776f"
             name="_x2"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -110,6 +172,7 @@
           <property
             Id="e05e0f0f-6908-40e5-866b-6e314195ab39"
             name="_y2"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -122,7 +185,15 @@
         <ownedOperationsInternal>
           <operation
             Id="a38c679f-c44a-4551-81d9-f41ffb749b15"
-            name="draw"
+            name="pure virtual draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c3fab1f7-2031-4975-965d-2f1c25478ba7"
+            name="pure virtual input"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -138,6 +209,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="fa804ad4-c2da-45be-a2de-420074520fd9">
+            <classMoniker
+              Id="f5fc397b-c67a-4216-a715-2ae3058acb4b"
+              LastKnownName="CircleFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="c41838ac-8799-4d04-b0a5-5998c31f0398"
@@ -152,6 +232,7 @@
           <property
             Id="2aaa66f9-483c-40bc-8a4d-415a1456be80"
             name="_x"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -163,6 +244,7 @@
           <property
             Id="a2be4b53-e17a-428e-8c06-d7e92e1c047c"
             name="_y"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -174,6 +256,7 @@
           <property
             Id="1083615c-2364-4c67-81f5-c60e1e1a1686"
             name="_radius"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -186,7 +269,15 @@
         <ownedOperationsInternal>
           <operation
             Id="ddd2305c-8cf5-4736-8ecf-c03efbd8310a"
-            name="draw"
+            name="pure virtual draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e55bd17a-bcab-4392-a2e5-6170fc898f19"
+            name="pure virtual input"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -202,6 +293,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="86526734-a2df-4f5f-a498-8ba3d9f66eb8">
+            <classMoniker
+              Id="7cf6415a-e148-474a-a414-1f4ec100e0f9"
+              LastKnownName="RectangleFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="36c9ba74-2f62-4df3-b747-96d314557407"
@@ -216,6 +316,7 @@
           <property
             Id="2dcf9f7f-663c-4c94-b4de-17052a665079"
             name="_left"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -227,6 +328,7 @@
           <property
             Id="7e887227-32d9-4eee-85e2-f201b207dac2"
             name="_top"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -238,6 +340,7 @@
           <property
             Id="747f085a-53a1-42dd-ab7b-49d3bcc5e7a7"
             name="_right"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -249,6 +352,7 @@
           <property
             Id="fb159f5a-1601-49f4-a435-029177a2a8c5"
             name="_bottom"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -261,7 +365,231 @@
         <ownedOperationsInternal>
           <operation
             Id="bbbcf55f-b13e-4841-b195-6afa8dfacc9d"
-            name="draw"
+            name="pure virtual draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c5311927-9cb1-4f02-b3aa-13b484f6239d"
+            name="pure virtual input"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fb77274c-8aaf-4d82-b434-8ef6b8ce1c58"
+        name="LineFactory"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="2eb0a356-f200-4192-9cfd-3e0af192f408"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4d4172d0-4c34-4793-9532-20bf2339a784"
+              LastKnownName="FigureFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="f935dd94-e6eb-4b07-807a-b5f9e404952d"
+            name="_id"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="370779a7-30f9-48ea-af7b-ab3d8c67ffd9"
+            name="_name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ad9555b3-5f7b-4d36-b20d-ae90c4abfea3"
+            name="createFigure"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="180f3584-112a-43a4-a46c-f3a267371ea4"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c618f927-4894-4448-a33c-09b0f9f166a6"
+            name="getName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f5fc397b-c67a-4216-a715-2ae3058acb4b"
+        name="CircleFactory"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="eab538e3-b021-4aaf-8775-4d696c0b3850"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4d4172d0-4c34-4793-9532-20bf2339a784"
+              LastKnownName="FigureFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="dba4ba37-df47-47ab-aaf8-1b87623df069"
+            name="_id"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="03a2d773-27a6-454f-8b6b-c7250dbe953a"
+            name="_name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3a86d94b-c314-4a62-aab3-885ba85e51e9"
+            name="createFigure"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="01c413b6-4c45-4759-823f-73b71f28aee0"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="abfe599b-bf8b-445f-8f79-0f69b897643e"
+            name="getName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7cf6415a-e148-474a-a414-1f4ec100e0f9"
+        name="RectangleFactory"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="ce99635a-7653-4548-95bb-88727b6257d2"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4d4172d0-4c34-4793-9532-20bf2339a784"
+              LastKnownName="FigureFactory"
+              LastKnownLocation="ModelingProject1.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7b46aca0-8d31-43c7-a97a-fa8e7cba5d01"
+            name="_id"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ab665e59-e61d-4359-b7b0-91d20cc59433"
+            name="_name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="181db494-c97c-4b63-8c37-43c094186301"
+            name="createFigure"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="16dbfeea-ae32-49b5-8869-fc553a116c98"
+            name="getId"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="95b1a1f2-ee45-4a13-a959-8a468f2fc888"
+            name="getName"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

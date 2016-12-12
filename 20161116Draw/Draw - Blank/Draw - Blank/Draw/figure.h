@@ -12,7 +12,9 @@ class Figure
 public:
 	virtual void draw(BlackBoard &board) const= 0;
 	virtual void input(std::istream &is)=0;
-	virtual ~Figure()
+	virtual ~Figure()//析构函数一般为虚函数，这样在析构的时候
+					//就能动态绑定，不会发生派生类的独有的成员变量“被剥离”的情况
+					//能够完全释放内存
 	{
 		std::cout << "delete Figure!" << std::endl;
 	};

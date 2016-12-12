@@ -22,6 +22,5 @@ void Rectangle::input(std::istream &is)
 }
 shared_ptr<Figure> RectangleFactory::createFigure()
 {
-	
 	return shared_ptr<Figure>(new Rectangle);
 }
