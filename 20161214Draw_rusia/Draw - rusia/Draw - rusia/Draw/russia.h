@@ -6,14 +6,14 @@ class Russia
 {
 	friend class UIController;
 public:
-	Russia(int id) :_id(id) {};
+	//Russia()=default;
 	virtual void Reset(int r,int c)=0;
 	virtual void OnDraw(BlackBoard &board) = 0;
 	virtual bool CanMove(int dx,int dy) = 0;
 	virtual void Move(int dx, int dy) = 0;
-	virtual int id()const { return _id; };
+	//virtual int id()const { return _id; };
 protected:
-	int _id;
+	//int _id;
 	typedef std::vector<std::shared_ptr<Box>> vecBoxPtr;
 	vecBoxPtr _boxPtrs;
 	

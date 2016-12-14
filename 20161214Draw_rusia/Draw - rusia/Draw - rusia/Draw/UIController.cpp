@@ -17,8 +17,11 @@ UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS
 			_boxes[r][c] = false; 
 		}
 	}
-	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_1(0, _left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_1(_left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_2(_left, _top, 0, INITIAL_COL)));
 	//auto _boxPtrs = _russiaPtrs[0];
+	_random = 0;
+	//curRussia = _russiaPtrs[0];
 }
 
 UIController::~UIController()
@@ -36,7 +39,7 @@ void UIController::OnDraw(BlackBoard &board)
 	board.SetColor(1, 0, 0); 
 	/*for(int i=0;i<4;++i)
 		_boxPtrs[i]->OnDraw(board);*/
-	_russiaPtrs[0]->OnDraw(board);
+	_russiaPtrs[_random]->OnDraw(board);
 
 	board.SetColor(0, 1, 1); 
 	for (int r = 0; r < ROWS; ++r)
@@ -147,9 +150,9 @@ void UIController::MoveBoxLeft()
 	//	//_box.Move(0, -1); 
 	//	board.Update(); 
 	//}
-	if (_russiaPtrs[0]->CanMove(0, -1))
+	if (_russiaPtrs[_random]->CanMove(0, -1))
 	{
-		_russiaPtrs[0]->Move(0, -1);
+		_russiaPtrs[_random]->Move(0, -1);
 		board.Update();
 	}
 }
@@ -168,9 +171,9 @@ void UIController::MoveBoxRight()
 		_box.Move(0, 1); 
 		board.Update(); 
 	}*/
-	if (_russiaPtrs[0]->CanMove(0, 1))
+	if (_russiaPtrs[_random]->CanMove(0, 1))
 	{
-		_russiaPtrs[0]->Move(0, 1);
+		_russiaPtrs[_random]->Move(0, 1);
 		board.Update();
 	}
 }
@@ -183,9 +186,9 @@ void UIController::MoveBoxDown()
 		board.Update(); 
 	}*/
 	//
-	if (_russiaPtrs[0]->CanMove(1, 0))
+	if (_russiaPtrs[_random]->CanMove(1, 0))
 	{
-		_russiaPtrs[0]->Move(1, 0);
+		_russiaPtrs[_random]->Move(1, 0);
 		board.Update();
 	}
 	else
@@ -194,7 +197,7 @@ void UIController::MoveBoxDown()
 		//InsertBox(_box);
 		/*for (int i = 0; i<4; ++i)
 			_boxes[_boxPtrs[i]->Row()][_boxPtrs[i]->Col()] = true;*/
-		InsertBox(_russiaPtrs[0]);
+		InsertBox(_russiaPtrs[_random]);
 		// Çå³þÂúÐÐ
 		EraseFullRows(); 
 
@@ -202,7 +205,8 @@ void UIController::MoveBoxDown()
 		/*for (int i = 0; i < 4; ++i) {
 			_boxPtrs[i]->Reset(i, INITIAL_COL);
 		}*/
-		_russiaPtrs[0]->Reset(0, INITIAL_COL);
+		//_russiaPtrs[0]->Reset(0, INITIAL_COL);
+		_Reset();
 		//_box.Reset(0, INITIAL_COL); 
 		//_box.Reset(0, INITIAL_COL);
 		board.Update(); 

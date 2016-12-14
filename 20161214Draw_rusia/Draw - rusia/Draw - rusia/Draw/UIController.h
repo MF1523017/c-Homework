@@ -3,6 +3,7 @@
 
 #include "Box.h"
 #include"russia_1.h"
+#include"russia_2.h"
 #include<vector>
 #include<iostream>
 #include<memory>
@@ -68,10 +69,19 @@ private:
 			_boxes[b->Row()][b->Col()] = true; 
 	}
 private:
-	bool _canMoves();
+	//bool _canMoves();
+	void _Reset()
+	{
+		_russiaPtrs[_random]->Reset(0, INITIAL_COL);
+		_random = 1;
+
+		//curRussia = _russiaPtrs[1];
+	}
 	bool _boxes[ROWS][COLS]; 
 	int _left,  _bottom; 
 	int _right, _top; 
+	int _random;
+	//std::shared_ptr<Russia> curRussia;
 	typedef std::vector<std::shared_ptr<Russia>> RussiaVecPtr;
 	RussiaVecPtr _russiaPtrs;
 	

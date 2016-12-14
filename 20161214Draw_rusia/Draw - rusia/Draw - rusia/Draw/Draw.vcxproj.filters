@@ -33,6 +33,9 @@
     <ClCompile Include="russia_1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="russia_2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlackBoard.h">
@@ -54,6 +57,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="russia_1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="russia_2.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
