@@ -1,0 +1,21 @@
+#pragma once
+#include"Box.h"
+#include<vector>
+#include<memory>
+class Russia
+{
+	friend class UIController;
+public:
+	Russia(int id) :_id(id) {};
+	virtual void Reset(int r,int c)=0;
+	virtual void OnDraw(BlackBoard &board) = 0;
+	virtual bool CanMove(int dx,int dy) = 0;
+	virtual void Move(int dx, int dy) = 0;
+	virtual int id()const { return _id; };
+protected:
+	int _id;
+	typedef std::vector<std::shared_ptr<Box>> vecBoxPtr;
+	vecBoxPtr _boxPtrs;
+	
+};
+

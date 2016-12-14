@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6c3b2908-08c0-4625-b401-399907a11c16" name="UMLClassDiagram1" linkedPackageId="d704a757-26bf-47ea-b460-27a08464c00b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0a44dfef-49fa-4076-baca-eb2fadf6bb80">
+      <profileInstance Id="e31d4b08-08f6-43c9-8fad-abff390b2585" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3685dd04-d287-4664-a168-1cb8b3047a64">
+      <profileInstance Id="757a71d5-7796-4b23-adb6-9bbeacc1f4d3" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" name="Russia" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="64342987-7b93-4d04-b035-e3f07e44aa1f" />
+        <ownedAttributesInternal>
+          <property Id="eed46614-3034-4066-bb52-e646024b2a1c" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="d5b1b658-10e5-4002-a9b2-b34a85ed8e14" name="Lower" value="4">
+                <elementDefinition Id="e0079329-99f7-48b3-b24d-834dbb12f25a" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="4173c4d0-5991-487b-9452-e7d7681830c3" name="Upper" value="4">
+                <elementDefinition Id="b19d50ae-ee05-478e-ae81-6822f1d66a03" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="9ff95ab5-4e5c-4b39-bb46-9771fb9f9083" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ddc76d23-cab6-4503-8ce4-6b11f18d3616" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="47480e74-c1b3-46e7-acec-f6be2e3b9f09" />
+          </operation>
+          <operation Id="dd015177-807d-4f2b-8e57-c705e5b29467" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf096d94-313c-4648-927e-f6ed912f7e27" />
+          </operation>
+          <operation Id="f17aa443-ed38-479b-bdfc-bf640bb65a5e" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b801a6d-0856-4b15-8a07-0cd8d13beabc" />
+          </operation>
+          <operation Id="1bada599-92b9-41aa-bd35-30a0edbc43f4" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4f9fa65e-8c56-4c66-94d3-edd171f3ae4a" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b6663555-c78f-4c77-9f34-fd63fe9730b0" name="Russia1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="079115dc-6d74-43b1-b813-fc0ef0d5a37b" />
+        <generalsInternal>
+          <generalization Id="43d7a45b-2afb-4067-9dd1-f3393d43abee" isSubstitutable="false">
+            <classMoniker Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" LastKnownName="Russia" />
+            <elementDefinition Id="62c70041-adba-4bb7-acd5-96c6ae6b2bcd" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="4a596484-0ecc-4dd2-8054-f7d4503369c9" isDerived="false" sourceEndRoleName="Russia1" targetEndRoleName="Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" LastKnownName="Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="40bddcc9-c888-4103-beef-71af6f3c86b2" name="Russia1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7d945773-c0dd-470e-8772-3400ad241002" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0700b581-af65-4dbe-b9c0-1e1e0d8d3cc1" name="Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="c0da534a-93cf-481e-bbad-2aa005a196cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="668c9c36-0076-4e8c-99b5-4d13c8873cee" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="962a27d8-ed7d-4654-bf72-54059cca41f0" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="d2f33f94-57ca-4b1d-bb56-eb382842fbc0" name="Lower" value="4">
+                <elementDefinition Id="a38f7d17-6f85-44ff-a1da-30d189a074e4" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="53383f59-91a0-4e94-aee6-4bfbae581307" name="Upper" value="4">
+                <elementDefinition Id="e711ced7-ef73-49a1-94f6-5f0bd4b61a56" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="78cb0d8b-c274-4f24-8e72-75dd9830f471" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="adb72d23-9d00-402d-b02b-b0b8f8852333" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ddbe7f8-3cc1-48fc-a49a-2cb016a1346d" />
+          </operation>
+          <operation Id="a5635dfc-8fde-413f-ab89-6ee203040546" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a001389e-d0aa-49a7-b938-4c0ff62e01d2" />
+          </operation>
+          <operation Id="271281a8-e829-4d5d-8a3b-e7d3f8dbdb4a" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="664e7c3f-ba9e-471f-8e19-b2d146e26b68" />
+          </operation>
+          <operation Id="4c4a6830-630a-4bb6-b0b6-e107facd27b1" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d2ed862-3dfe-40e8-bf83-e9dddf8967ec" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="51edde0d-1c76-42ae-97a3-3a142c0f43e0" name="Russia2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8dc250b3-6280-435d-bc96-cbc8951dbd39" />
+        <generalsInternal>
+          <generalization Id="4b770154-9fb8-48b5-a0aa-04ffa5ac3b97" isSubstitutable="false">
+            <classMoniker Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" LastKnownName="Russia" />
+            <elementDefinition Id="12ca3544-54ba-4dae-8b1c-37da7e83e883" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="665a4476-2b29-4c98-b6a2-aac729a75f20" isDerived="false" sourceEndRoleName="Russia2" targetEndRoleName="Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" LastKnownName="Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="460e21ea-f5e8-4074-a35b-209076a74a67" name="Russia2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7c15e9a9-88fb-4545-8f2a-961b560646d8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e6418add-de80-4e8e-9d12-e45efad691dd" name="Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="a120290e-a112-421c-9d96-b3cdb70e0cfa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c29ad321-bcab-45d3-828e-414d21b2701b" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="0f350f53-d366-405b-bf3e-319aea992134" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="5098da4c-b4ca-4aee-8aa2-5c2c00f197f8" name="Lower" value="4">
+                <elementDefinition Id="f8618a94-a19c-44ef-9005-2bb345f14d91" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="d247fb6c-c83b-4ddd-a101-df70d074a270" name="Upper" value="4">
+                <elementDefinition Id="6c6efe7e-5bee-4fc1-9995-6f9d970205a9" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="0dedaf82-2307-40e1-896a-710c50747b37" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a085b2d8-283a-47f4-ba06-d0df70687fe8" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e8e1a80d-4b83-4d3a-a546-7e7144f41ebd" />
+          </operation>
+          <operation Id="30009160-5b0d-41e0-b457-9506eb4e7a13" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b9ca273-acaa-42c8-922e-09b8874f185a" />
+          </operation>
+          <operation Id="bd1ec44a-6f74-48b4-a9ac-a9fd0eef32f4" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="71f1f619-31d6-4902-a8c2-4a4eb239266f" />
+          </operation>
+          <operation Id="bdf534f3-aca9-47fa-84f0-4aa192f559f3" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d9cbb150-f27a-4a0a-9c25-4255fe9cfb26" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="16908c02-7ae0-4285-81f3-fae5e2787956" name="Russia3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e98663d3-89c4-41a2-9401-daa4a7cd9efa" />
+        <generalsInternal>
+          <generalization Id="697da5a1-f260-484c-9458-a6d1035c398b" isSubstitutable="false">
+            <classMoniker Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" LastKnownName="Russia" />
+            <elementDefinition Id="2db675bc-d30a-4b0a-ab65-34bdcd8eca15" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="6ae20cf1-9351-45a2-a5f2-f7324da86ae5" isDerived="false" sourceEndRoleName="Russia3" targetEndRoleName="Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" LastKnownName="Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="474d9721-3d07-43a5-8c03-dabaa127eddf" name="Russia3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0eb022ba-b678-4c0b-864a-e291c50f0668" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d77d3762-005b-4405-a214-7debdb8877d1" name="Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="44be65f7-dbe2-4f71-a2bf-cf39b7cf85e4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2baab618-4a65-4700-9d85-3ff9801c95aa" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="75a9d12a-42f1-4d44-a39e-a64a221a27a5" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="049b9d2b-b73f-49a0-bb82-f7405f713629" name="Lower" value="4">
+                <elementDefinition Id="9fcef48d-b913-468b-9da1-22a0e9568237" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="241d270b-2663-4eb7-87df-6bca1273c7db" name="Upper" value="4">
+                <elementDefinition Id="780acd60-2860-45e6-91d7-bdc95eb6795c" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="15750b48-dc43-468f-8c03-921e2722ca7e" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="8bae7c10-b6fa-42e7-98ef-71cce7b7eb15" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="130f9275-f17f-49e5-9125-166c9756eb40" />
+          </operation>
+          <operation Id="fa531f49-353a-405f-91ef-df120e8c06c8" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48747a2c-70cc-4fff-bfb4-ee73bb995fed" />
+          </operation>
+          <operation Id="ea45d0e5-5bbc-4717-81c9-1ce197e93f2c" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a72b2c12-da73-4072-b61a-514b8ad27443" />
+          </operation>
+          <operation Id="bff2ba04-c5be-4a7d-b980-14b5d8450ec5" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="36a1b28b-1855-4538-86e3-66f8db01816a" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bdaf05e4-92c1-4eb3-848e-c7953e2a0b64" name="Russia4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f2a233fd-197f-480d-b572-c41966974207" />
+        <generalsInternal>
+          <generalization Id="35cf97cd-ecc5-4759-9ac2-ccec6d55151e" isSubstitutable="false">
+            <classMoniker Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" LastKnownName="Russia" />
+            <elementDefinition Id="64e7833a-cd4f-4931-9100-8147a3ffdaec" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="48834e58-2175-4725-8c1c-6ffcb18d11fc" isDerived="false" sourceEndRoleName="Russia4" targetEndRoleName="Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" LastKnownName="Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a22f66d2-d941-44f1-a484-91e3b93c64df" name="Russia4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="49cd32c4-60fc-4deb-92b3-0d621ade1502" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8939abe3-1f75-4e78-a5b8-3d668520d3df" name="Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="e81bc94a-72a0-4a3e-9539-8bf540615e79" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e79fae2d-a2f6-42a5-9330-3ae63aad0eca" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="9a08bfcc-a516-4303-9b0a-702aeba60256" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="fffdd264-d667-4e8c-827d-b352d7134a69" name="Lower" value="4">
+                <elementDefinition Id="40559a35-9994-4a55-ac54-27d18a7fea21" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="491622b1-9887-4df5-aafa-c7e8aec92c9b" name="Upper" value="4">
+                <elementDefinition Id="07d4ba48-5bbd-4b69-b0e0-7ef9e1d14e5c" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="4ef1e1e2-3487-4560-9512-a021dd28276d" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6024de65-4f88-4d21-9864-30d3739da48d" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7fda701a-34b6-44bc-b285-5e544bdc474c" />
+          </operation>
+          <operation Id="3eb21ab8-1a54-4442-bc66-dd651e5d93ac" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4581e8c2-a915-47b2-8ed4-5e56cd38ef98" />
+          </operation>
+          <operation Id="6ac82191-8e6b-420c-a9fe-3e1ea1fc9cf5" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="802ac402-1d2a-4aec-b94b-4929536d6c70" />
+          </operation>
+          <operation Id="3701e21f-1124-4635-ad94-784e21cd35ad" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="421b0743-8988-4416-90d8-f4ef284117d9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e2c1f04c-3d5a-41e8-ab5d-66f81faca6f2" name="Russia5" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bb41ba76-285a-44c2-9be9-837b3420bfb1" />
+        <generalsInternal>
+          <generalization Id="99075e21-28c0-42eb-ba50-fcce2e831e07" isSubstitutable="false">
+            <classMoniker Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" LastKnownName="Russia" />
+            <elementDefinition Id="8ec8c3b3-f164-4144-8fdd-d9e3d8956355" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="2c5d7900-5ef9-4e57-b35d-513b0b295c4f" isDerived="false" sourceEndRoleName="Russia5" targetEndRoleName="Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" LastKnownName="Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46ef4844-cd28-4bcc-8294-9d1c2f5aab23" name="Russia5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="986ed170-528c-4e8d-9cf3-461f36862e21" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b157b2c-3d61-4b12-9c97-4d592f4633d8" name="Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="50bc5fc5-ab91-4312-83a7-f0e3660ea5aa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="aaf9dbb3-0f8f-40b5-8f8b-66bb5b888338" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="00d92fdf-3daa-4614-a7ce-252b3d1b4ae5" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="4392ddb4-b59a-40a9-bc76-6ba75c22c107" name="Lower" value="4">
+                <elementDefinition Id="58ad9e2e-d7bb-456b-829d-12f344b97782" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="bfdc82d7-4703-430d-b939-f0dfc45b8e79" name="Upper" value="4">
+                <elementDefinition Id="1f494098-d86a-465c-86e8-956738c2b057" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="12cd0beb-f636-4229-9eae-54a4be89bd75" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e396b1cb-ced2-4a71-97f8-994d4c022585" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="135cb243-5982-4686-ac9d-c1e761eb639c" />
+          </operation>
+          <operation Id="bf9b5f9e-54db-43e7-9540-44464aac2e62" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="94ad4621-0df4-407c-81aa-a6f82035633d" />
+          </operation>
+          <operation Id="613689b7-a6fe-4813-bf5c-b85c2b6d2915" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7ad2bd7c-258a-4002-b91a-00b8f6a4e7c9" />
+          </operation>
+          <operation Id="3d65405f-03e5-4547-a926-e6c5d7f763aa" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a8cef1e4-5f5d-4404-bc6e-8a8c2cfd1754" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fc214403-713b-40d0-a904-0c6f93c6b171" name="Russia6" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="db83cf9d-07c5-48d1-aa71-bd5d41836f6c" />
+        <generalsInternal>
+          <generalization Id="fc73ff52-13d3-4bbc-babd-388b28f7458c" isSubstitutable="false">
+            <classMoniker Id="17be9a9f-71c7-4a3d-989b-1b72c9f6fd0b" LastKnownName="Russia" />
+            <elementDefinition Id="08c5653c-3aeb-431b-a4ad-90b94f8bed33" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="42b7a583-851a-4a68-aff0-a5c46aa0f1bb" isDerived="false" sourceEndRoleName="Russia6" targetEndRoleName="Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" LastKnownName="Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1c06347f-4e4e-49f2-a51b-736e60c3ac2d" name="Russia6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9d60ac9c-f955-4541-b1b6-4b3ec589b8f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ae1d2d5-2c27-40f7-b55c-3ddf89077db7" name="Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="34355640-c488-431d-b430-d147615c6c31" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="db783f3e-4ce3-4419-8e0f-91836f3fa2fd" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6a6a5573-0db0-42f5-a9df-5d5d113e2e13" name="Box _box" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="990456a8-9474-404b-8405-15a1da8cb26d" name="Lower" value="4">
+                <elementDefinition Id="46c9ccdd-7400-476e-b49c-993bfcc64a55" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="e8fbbb29-eca9-48c7-a612-cb684c296938" name="Upper" value="4">
+                <elementDefinition Id="22e3d0d5-aa90-4600-abc0-52c49f2ac5f6" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="295e274c-00e2-49f5-991d-46d7d386f8c1" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="911aa9d0-0513-47e5-86cc-ea7e0f720e44" name="Ondraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9f71d748-9845-48d7-8917-d6225d7ca1b7" />
+          </operation>
+          <operation Id="82de19b4-681a-4426-a924-fb8f611fc09c" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="77eb6336-c5f7-4f75-888a-8fdd3bf79fd2" />
+          </operation>
+          <operation Id="05831e58-4037-4812-ac8b-456f9796ea77" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="05579857-26dd-43d2-bf86-fc45fe171902" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="54cb7ba7-32c7-4b8a-8c76-80af703c6781" name="Box" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f03818d3-8871-4ed0-91da-a95e1809104d" />
+        <ownedAttributesInternal>
+          <property Id="d436adfd-1775-465d-9d20-b7550eb628a9" name="_left" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="39ae1913-7665-4ae5-a643-9a3e5fdb965f" />
+          </property>
+          <property Id="550eb36d-ff27-49fb-9b21-a3e1d93073a2" name="_top" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dcd91024-b701-4d84-9aa2-c23ef143b675" />
+          </property>
+          <property Id="b17489d0-8e31-4303-b194-7b651a5015d3" name="_row" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f84baa63-5f4e-4648-84c0-1b67159c6552" />
+          </property>
+          <property Id="36c02de7-e897-46b1-b5ac-7612df85a3c1" name="_col" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="680aac1e-786f-4f65-b826-7eb8b58a2044" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a9eb5bba-5f9b-4e4b-a1c3-68c65576bb61" name="OnDraw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="57d5cc49-8240-43dd-a0eb-d7f7e315c74f" />
+          </operation>
+          <operation Id="450a6212-f909-4273-8803-03321a926eef" name="CanMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c186fdf8-a63d-483d-9150-546d7b077954" />
+          </operation>
+          <operation Id="4db3bab5-e8c1-432d-944d-8af22aa61b7c" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e1f15aa8-6964-4cfe-a666-6d8ef5eaa7a9" />
+          </operation>
+          <operation Id="c5b4449b-290c-430b-a378-7c683c388760" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="291ae0d3-faae-43c9-97ae-bea57eea2892" />
+          </operation>
+          <operation Id="cdabb49f-029b-4ae5-ba37-c33853078c1e" name="LeftTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ea634ac-4786-434d-9b88-0bc9f02d4f89" />
+          </operation>
+          <operation Id="5811403d-5587-4ea3-a635-88e196a1a495" name="RightTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5093d92e-f9b7-4424-8d93-42d798825b34" />
+          </operation>
+          <operation Id="f255f404-d35d-45c3-b4af-8f9194202f2a" name="LowerTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="54b63e50-363a-4a16-b5ac-8f9f1a819bae" />
+          </operation>
+          <operation Id="88ab8054-2154-4ff5-844b-76c63535df27" name="Row" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="14c6c0d7-2518-43b7-9062-57f0edaa66d9" />
+          </operation>
+          <operation Id="eef9b5f2-2e99-4f83-9624-77c4fa51be79" name="Col" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3dad31dd-1145-46b5-82ce-89abe02618b0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="d704a757-26bf-47ea-b460-27a08464c00b" name="ModelingProject1">
+    <elementDefinition Id="b6029896-b96c-4557-97d6-4feb2e578010" />
+  </package>
+</logicalClassDesignerModel>
