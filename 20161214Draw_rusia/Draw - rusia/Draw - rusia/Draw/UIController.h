@@ -36,7 +36,7 @@ public:
 	}
 
 	// 掉落速度，单位毫秒，即每X毫秒掉落一格
-	int GameSpeed() { return 300-(_score/10); }
+	int GameSpeed() { return 300-(_score/2); }
 
 	// 定时器处理逻辑，此处主要用于驱动方块自动掉落
 	void OnTimer(int code); 

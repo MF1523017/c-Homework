@@ -2,6 +2,7 @@
 #include <iostream>
 #include "UIController.h"
 #include "BlackBoard.h"
+#include<string>
 
 extern BlackBoard board; 
 
@@ -72,38 +73,28 @@ void UIController::OnTimer(int code)
 
 void UIController::OnKey(unsigned char key, int x, int y)
 {
+	key = tolower(key);
 	switch (key)
 	{
 	case 'q':
 		exit(0);
 		break; 
-	case 'Q':
-		exit(0);
-		break;
+
 	case 's':
 		MoveBoxDown(); 
 		break; 
-	case 'S':
-		MoveBoxDown();
-		break;
+
 	case 'a':
 		MoveBoxLeft(); 
 		break; 
-	case 'A':
-		MoveBoxLeft();
-		break;
+
 	case 'd':
 		MoveBoxRight(); 
 		break; 
-	case 'D':
-		MoveBoxRight();
-		break;
 	case 'w':
 		Rotate();
 		break;
-	case 'W':
-		Rotate();
-		break;
+
 	}
 }
 
