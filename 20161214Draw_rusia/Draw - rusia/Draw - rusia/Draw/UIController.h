@@ -4,6 +4,11 @@
 #include "Box.h"
 #include"russia_1.h"
 #include"russia_2.h"
+#include"russia_3.h"
+#include"russia_4.h"
+#include"russia_5.h"
+#include"russia_6.h"
+#include"russia_7.h"
 #include<vector>
 #include<iostream>
 #include<memory>
@@ -29,7 +34,7 @@ public:
 	}
 
 	// 掉落速度，单位毫秒，即每X毫秒掉落一格
-	int GameSpeed() { return 100; }
+	int GameSpeed() { return 300; }
 
 	// 定时器处理逻辑，此处主要用于驱动方块自动掉落
 	void OnTimer(int code); 
@@ -61,7 +66,7 @@ private:
 	void MoveBoxLeft(); 
 	void MoveBoxRight(); 
 	void MoveBoxDown(); 
-	
+	void Rotate();
 	// 活动方块插入固定方块
 	void InsertBox(std::shared_ptr<Russia> russia)
 	{
@@ -73,7 +78,8 @@ private:
 	void _Reset()
 	{
 		_russiaPtrs[_random]->Reset(0, INITIAL_COL);
-		_random = 1;
+		_random += 1;
+		_random %= 7;
 
 		//curRussia = _russiaPtrs[1];
 	}
@@ -81,6 +87,7 @@ private:
 	int _left,  _bottom; 
 	int _right, _top; 
 	int _random;
+	
 	//std::shared_ptr<Russia> curRussia;
 	typedef std::vector<std::shared_ptr<Russia>> RussiaVecPtr;
 	RussiaVecPtr _russiaPtrs;

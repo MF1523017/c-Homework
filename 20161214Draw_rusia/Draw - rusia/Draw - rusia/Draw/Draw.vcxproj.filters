@@ -36,6 +36,24 @@
     <ClCompile Include="russia_2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="russia.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="russia_3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="russia_4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="russia_5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="russia_6.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="russia_7.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlackBoard.h">
@@ -60,6 +78,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="russia_2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="russia_3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="russia_4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="russia_5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="russia_6.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="russia_7.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

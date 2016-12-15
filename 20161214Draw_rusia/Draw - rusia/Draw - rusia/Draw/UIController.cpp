@@ -1,7 +1,5 @@
 #include "stdafx.h"
-
 #include <iostream>
-
 #include "UIController.h"
 #include "BlackBoard.h"
 
@@ -19,6 +17,11 @@ UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS
 	}
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_1(_left, _top, 0, INITIAL_COL)));
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_2(_left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_3(_left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_4(_left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_5(_left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_6(_left, _top, 0, INITIAL_COL)));
+	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_7(_left, _top, 0, INITIAL_COL)));
 	//auto _boxPtrs = _russiaPtrs[0];
 	_random = 0;
 	//curRussia = _russiaPtrs[0];
@@ -78,6 +81,8 @@ void UIController::OnKey(unsigned char key, int x, int y)
 	case 'd':
 		MoveBoxRight(); 
 		break; 
+	case 'r':
+		Rotate();
 	}
 }
 
@@ -140,7 +145,10 @@ void UIController::PushRows(int row)
 		_boxes[0][c] = false; 
 	}
 }
-
+void UIController::Rotate()
+{
+	_russiaPtrs[_random]->Rotate();
+}
 void UIController::MoveBoxLeft()
 {
 	//if (_boxPtrs[0]->CanMove(0, -1)&&_boxPtrs[1]->CanMove(0, -1)&& _boxPtrs[2]->CanMove(0, -1)&& _boxPtrs[3]->CanMove(0, -1))

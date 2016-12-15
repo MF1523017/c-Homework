@@ -11,8 +11,9 @@ public:
 		}
 	}
 	virtual void Reset(int r,int c);
-	virtual void OnDraw(BlackBoard &board);
+	virtual void Rotate();
+	/*virtual void OnDraw(BlackBoard &board);
 	virtual bool CanMove(int dx, int dy);
-	virtual void Move(int dx, int dy);
+	virtual void Move(int dx, int dy);*/
 	//virtual int id()const { return _id; };
 };

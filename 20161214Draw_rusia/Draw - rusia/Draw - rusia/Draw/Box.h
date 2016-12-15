@@ -1,5 +1,6 @@
 #ifndef __BOX__
 #define __BOX__
+//#include"UIController.h"
 
 class BlackBoard; 
 
@@ -36,9 +37,10 @@ public:
 		return _top + (-_row - 1) * BOX_SIZE + 1 < y; 
 	}
 
-	int Row() { return _row; }
-	int Col() { return _col; }
-
+	int & Row() { return _row; }
+	int & Col() { return _col; }
+	//int &Left() { return _left; }
+	//const int Right()const { return _left + UIController::COLS*Box::BOX_SIZE; }
 private:
 	int _left, _top; 
 	int _row, _col; 

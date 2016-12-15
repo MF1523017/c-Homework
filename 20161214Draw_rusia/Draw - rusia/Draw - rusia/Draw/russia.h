@@ -8,9 +8,10 @@ class Russia
 public:
 	//Russia()=default;
 	virtual void Reset(int r,int c)=0;
-	virtual void OnDraw(BlackBoard &board) = 0;
-	virtual bool CanMove(int dx,int dy) = 0;
-	virtual void Move(int dx, int dy) = 0;
+	virtual void Rotate();
+	virtual void OnDraw(BlackBoard &board);
+	virtual bool CanMove(int dx,int dy) ;
+	virtual void Move(int dx, int dy);
 	//virtual int id()const { return _id; };
 protected:
 	//int _id;

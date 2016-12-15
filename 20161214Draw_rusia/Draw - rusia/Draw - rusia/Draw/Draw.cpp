@@ -58,7 +58,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//std::cout << sizeof(st) << std::endl;
 	// 以下代码用于初始化窗口等、可忽略
 	board.InitCommandLine(&argc, (char **)argv); 
-	board.InitWindowSize(600, 1000); 
+	board.InitWindowSize(600, 800); 
 
 	board.InitDisplayCallback(DisplayCallback); 
 	board.InitKeyboardCallback(KeyboardCallback); 
