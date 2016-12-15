@@ -7,6 +7,8 @@ extern BlackBoard board;
 
 UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS * Box::BOX_SIZE / 2), _right(COLS * Box::BOX_SIZE / 2), _top(ROWS * Box::BOX_SIZE / 2)
 {
+	
+	_score = 0;//得分置零
 	for (int r = 0; r < ROWS; ++r)
 	{
 		for (int c = 0; c < COLS; ++c)
@@ -15,6 +17,7 @@ UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS
 			_boxes[r][c] = false; 
 		}
 	}
+	//初始化不同的俄罗斯方块
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_1(_left, _top, 0, INITIAL_COL)));
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_2(_left, _top, 0, INITIAL_COL)));
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_3(_left, _top, 0, INITIAL_COL)));
@@ -23,7 +26,9 @@ UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_6(_left, _top, 0, INITIAL_COL)));
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_7(_left, _top, 0, INITIAL_COL)));
 	//auto _boxPtrs = _russiaPtrs[0];
-	_random = 0;
+	srand((unsigned)time(0));//指定seed为当前系统流逝的时间
+	_rand();
+	//_random = 0;
 	//curRussia = _russiaPtrs[0];
 }
 
@@ -43,7 +48,7 @@ void UIController::OnDraw(BlackBoard &board)
 	/*for(int i=0;i<4;++i)
 		_boxPtrs[i]->OnDraw(board);*/
 	_russiaPtrs[_random]->OnDraw(board);
-
+	//board.DrawString();
 	board.SetColor(0, 1, 1); 
 	for (int r = 0; r < ROWS; ++r)
 	{
@@ -72,17 +77,33 @@ void UIController::OnKey(unsigned char key, int x, int y)
 	case 'q':
 		exit(0);
 		break; 
+	case 'Q':
+		exit(0);
+		break;
 	case 's':
 		MoveBoxDown(); 
 		break; 
+	case 'S':
+		MoveBoxDown();
+		break;
 	case 'a':
 		MoveBoxLeft(); 
 		break; 
+	case 'A':
+		MoveBoxLeft();
+		break;
 	case 'd':
 		MoveBoxRight(); 
 		break; 
-	case 'r':
+	case 'D':
+		MoveBoxRight();
+		break;
+	case 'w':
 		Rotate();
+		break;
+	case 'W':
+		Rotate();
+		break;
 	}
 }
 
@@ -124,6 +145,8 @@ void UIController::EraseFullRows()
 		if (fulled)
 		{
 			PushRows(r); 
+			_score += 10;
+			std::cout << "you score is " << _score <<std::endl;
 		}
 	}
 }

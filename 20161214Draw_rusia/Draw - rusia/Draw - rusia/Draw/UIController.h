@@ -12,6 +12,8 @@
 #include<vector>
 #include<iostream>
 #include<memory>
+#include<cstdlib>
+#include<ctime>
 
 class BlackBoard; 
 
@@ -19,7 +21,7 @@ class UIController
 {
 public:
 	// 整个区域容纳的方块数量
-	const static int ROWS = 40; 
+	const static int ROWS = 30; 
 	const static int COLS = 10;
 
 	// 初始掉落位置
@@ -34,7 +36,7 @@ public:
 	}
 
 	// 掉落速度，单位毫秒，即每X毫秒掉落一格
-	int GameSpeed() { return 300; }
+	int GameSpeed() { return 300-(_score/10); }
 
 	// 定时器处理逻辑，此处主要用于驱动方块自动掉落
 	void OnTimer(int code); 
@@ -78,16 +80,20 @@ private:
 	void _Reset()
 	{
 		_russiaPtrs[_random]->Reset(0, INITIAL_COL);
-		_random += 1;
-		_random %= 7;
-
+		/*_random += 1;
+		_random %= 7;*/
+		_rand();//产生随机数
 		//curRussia = _russiaPtrs[1];
+	}
+	void _rand()
+	{
+		_random = rand() % 7;
 	}
 	bool _boxes[ROWS][COLS]; 
 	int _left,  _bottom; 
 	int _right, _top; 
 	int _random;
-	
+	int _score;
 	//std::shared_ptr<Russia> curRussia;
 	typedef std::vector<std::shared_ptr<Russia>> RussiaVecPtr;
 	RussiaVecPtr _russiaPtrs;

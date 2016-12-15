@@ -71,9 +71,12 @@ public:
 	// 画圆，参数为圆圆心x、y，半径
 	void DrawCircle(int x, int y, int r); 
 
-
+	/*void BuildFont();
+	void glPrint(const char *pstr);
+	void DrawString();*/
 private:
 	int _width, _height; 
+	GLuint base;
 }; 
 
 
