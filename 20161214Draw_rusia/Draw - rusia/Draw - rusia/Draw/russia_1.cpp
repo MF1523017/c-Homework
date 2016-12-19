@@ -16,20 +16,24 @@ void Russia_1::Rotate()
 	{
 		int c = _boxPtrs[0]->Col();
 		int r = _boxPtrs[0]->Row();
+		
 		int i = 0;
 		for (auto b : _boxPtrs)
 		{
 			b->Reset(r , c+i);
 			++i;
 		}
+		if (_boxPtrs[0]->Col() < 0)
+			Move(0, -_boxPtrs[0]->Col());
 		if(_boxPtrs[3]->Col()>=UIController::COLS)
 			Move(0, UIController::COLS - (_boxPtrs[3]->Col()) - 1);
 	}
 	else
 	{
 		int c = _boxPtrs[0]->Col();
-		int r = _boxPtrs[0]->Row();
+		int r = _boxPtrs[0]->Row()-1;
 		Reset(r, c);
+		//Move(0,1);
 	}
 }
 //void Russia_1::OnDraw(BlackBoard &board)

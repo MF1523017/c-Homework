@@ -98,6 +98,16 @@ void BlackBoard::DrawLine(int x1, int y1, int x2, int y2)
 	glVertex2f(GLfloat(x1) / _width * 2, GLfloat(y1) / _height * 2);
 	glVertex2f(GLfloat(x2) / _width * 2, GLfloat(y2) / _height * 2);
 	glEnd();
+	
+}
+void BlackBoard::DrawCube(int x1, int y1, int x2, int y2)
+{
+	glBegin(GL_QUAD_STRIP);
+	glVertex2f(GLfloat(x1) / _width * 2, GLfloat(y1) / _height * 2);
+	glVertex2f(GLfloat(x1) / _width * 2, GLfloat(y2) / _height * 2);
+	glVertex2f(GLfloat(x2) / _width * 2, GLfloat(y1) / _height * 2);
+	glVertex2f(GLfloat(x2) / _width * 2, GLfloat(y2) / _height * 2);
+	glEnd();
 }
 
 

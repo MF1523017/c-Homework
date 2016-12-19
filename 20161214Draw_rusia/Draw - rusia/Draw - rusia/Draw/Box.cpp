@@ -14,11 +14,11 @@ void Box::OnDraw(BlackBoard &board)
 {
 	int x1 = _left + _col * BOX_SIZE, x2 = x1 + BOX_SIZE - 1; 
 	int y1 = _top  - _row * BOX_SIZE, y2 = y1 - BOX_SIZE + 1; 
-
-	board.DrawLine(x1, y1, x1, y2); 
+	board.DrawCube(x1, y1, x2, y2);
+	/*board.DrawLine(x1, y1, x1, y2); 
 	board.DrawLine(x1, y1, x2, y1); 
 	board.DrawLine(x1, y2, x2, y2); 
-	board.DrawLine(x2, y1, x2, y2); 
+	board.DrawLine(x2, y1, x2, y2); */
 }
 
 void Box::Move(int dx, int dy)

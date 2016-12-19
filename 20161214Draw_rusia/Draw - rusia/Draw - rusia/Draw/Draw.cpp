@@ -57,17 +57,30 @@ int _tmain(int argc, _TCHAR* argv[])
 	////s.a = 0.2;
 	//std::cout << sizeof(st) << std::endl;
 	// 以下代码用于初始化窗口等、可忽略
-	board.InitCommandLine(&argc, (char **)argv); 
-	board.InitWindowSize(600, 800); 
+	std::cout << "			TETRIS GAME\n"
+		<< "===========================================================\n"
+		<< "		Usage:\n"
+		<< "		tap a or A to move to left\n"
+		<< "		tap d or D to move to right\n"
+		<< "		tap s or S to move to down\n"
+		<< "		tap w or W to rotate\n"
+		<< "===========================================================\n"
+		<< "		start game:y  .end game:q\n"
+		<< "		your choice:";
+	unsigned char choice;
+	std::cin >>choice;
+	if (tolower(choice) == 'y') {
+		board.InitCommandLine(&argc, (char **)argv);
+		board.InitWindowSize(600, 800);
 
-	board.InitDisplayCallback(DisplayCallback); 
-	board.InitKeyboardCallback(KeyboardCallback); 
-	board.InitReshapeCallback(ReshapeCallback); 
+		board.InitDisplayCallback(DisplayCallback);
+		board.InitKeyboardCallback(KeyboardCallback);
+		board.InitReshapeCallback(ReshapeCallback);
 
-	board.InstallTimerCallback(UIController::handle().GameSpeed(), TimerCallback, 0);  
+		board.InstallTimerCallback(UIController::handle().GameSpeed(), TimerCallback, 0);
 
-	board.Show(); 
-
+		board.Show();
+	}
 	return 0;
 }
 

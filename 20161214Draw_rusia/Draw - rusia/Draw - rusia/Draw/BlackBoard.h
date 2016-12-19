@@ -70,7 +70,7 @@ public:
 
 	// 画圆，参数为圆圆心x、y，半径
 	void DrawCircle(int x, int y, int r); 
-
+	void DrawCube(int x1,int y1,int x2,int y2);
 	/*void BuildFont();
 	void glPrint(const char *pstr);
 	void DrawString();*/

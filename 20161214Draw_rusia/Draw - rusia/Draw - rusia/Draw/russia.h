@@ -17,6 +17,7 @@ protected:
 	//int _id;
 	typedef std::vector<std::shared_ptr<Box>> vecBoxPtr;
 	vecBoxPtr _boxPtrs;
+	//int i;
 	
 };
 

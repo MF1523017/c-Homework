@@ -8,7 +8,6 @@ extern BlackBoard board;
 
 UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS * Box::BOX_SIZE / 2), _right(COLS * Box::BOX_SIZE / 2), _top(ROWS * Box::BOX_SIZE / 2)
 {
-	
 	_score = 0;//µ√∑÷÷√¡„
 	for (int r = 0; r < ROWS; ++r)
 	{
