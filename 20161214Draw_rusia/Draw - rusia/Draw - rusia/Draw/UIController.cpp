@@ -27,7 +27,13 @@ UIController::UIController() : _left(-(COLS * Box::BOX_SIZE / 2)), _bottom(-ROWS
 	_russiaPtrs.push_back(std::shared_ptr<Russia>(new Russia_7(_left, _top, 0, INITIAL_COL)));
 	//auto _boxPtrs = _russiaPtrs[0];
 	srand((unsigned)time(0));//指定seed为当前系统流逝的时间
-	_rand();
+	_random =_rand();
+	while (true) {
+		_next = _rand();//产生随机数
+		if (_next != _random)
+			break;
+	}
+	_russiaPtrs[_next]->Reset(4, 14);
 	//_random = 0;
 	//curRussia = _russiaPtrs[0];
 }
@@ -48,6 +54,7 @@ void UIController::OnDraw(BlackBoard &board)
 	/*for(int i=0;i<4;++i)
 		_boxPtrs[i]->OnDraw(board);*/
 	_russiaPtrs[_random]->OnDraw(board);
+	_russiaPtrs[_next]->OnDraw(board);
 	//board.DrawString();
 	board.SetColor(0, 1, 1); 
 	for (int r = 0; r < ROWS; ++r)

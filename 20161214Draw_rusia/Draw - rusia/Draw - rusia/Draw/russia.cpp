@@ -10,6 +10,7 @@ void Russia::OnDraw(BlackBoard &board)
 		b->OnDraw(board);
 	}
 }
+
 bool Russia::CanMove(int dx, int dy)
 {
 	for (auto b : _boxPtrs)

@@ -105,17 +105,25 @@ private:
 		_russiaPtrs[_random]->Reset(0, INITIAL_COL);
 		/*_random += 1;
 		_random %= 7;*/
-		_rand();//产生随机数
+		_random = _next;
+		_russiaPtrs[_random]->Reset(0, INITIAL_COL);
+		while (true) {
+			_next = _rand();//产生随机数
+			if (_next != _random)
+				break;
+		}
 		//curRussia = _russiaPtrs[1];
+		_russiaPtrs[_next]->Reset(5, 14);
 	}
-	void _rand()
+	int _rand()
 	{
-		_random = rand() % 7;
+		 return rand() % 7;
 	}
 	bool _boxes[ROWS][COLS]; 
 	int _left,  _bottom; 
 	int _right, _top; 
 	int _random;
+	int _next;
 	int _score;
 	//std::shared_ptr<Russia> curRussia;
 	typedef std::vector<std::shared_ptr<Russia>> RussiaVecPtr;
