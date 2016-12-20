@@ -12,6 +12,7 @@ public:
 		_boxPtrs.push_back(std::shared_ptr<Box>(new Box(left, top, row+1, col+1)));
 	}
 	virtual void Reset(int r, int c);
+	virtual void Rotate() {};
 	/*virtual void OnDraw(BlackBoard &board);
 	virtual bool CanMove(int dx, int dy);
 	virtual void Move(int dx, int dy);*/

@@ -31,7 +31,7 @@ void Russia_1::Rotate()
 	else
 	{
 		int c = _boxPtrs[0]->Col();
-		int r = _boxPtrs[0]->Row()-1;
+		int r = _boxPtrs[0]->Row();
 		Reset(r, c);
 		//Move(0,1);
 	}
