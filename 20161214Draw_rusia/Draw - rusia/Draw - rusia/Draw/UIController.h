@@ -69,6 +69,8 @@ private:
 	void MoveBoxRight(); 
 	void MoveBoxDown(); 
 	void Rotate();
+	void Pause();
+	void gameOver();
 	// 活动方块插入固定方块
 	void InsertBox(std::shared_ptr<Russia> russia)
 	{
@@ -76,25 +78,26 @@ private:
 			_boxes[b->Row()][b->Col()] = true;
 			if (b->Row() == 0)
 			{
-				
-				std::cout << "		play again(y):";
-				unsigned char choice;
-				std::cin >> choice;
-				if (tolower(choice) == 'y') {
-					for (int r = 0; r < ROWS; ++r)
-					{
-						for (int c = 0; c < COLS; ++c)
-						{
-							// 初始没有固定方块
-							_boxes[r][c] = false;
-						}
-					}
-					break;
-				}
-				else
-				{
-					exit(0);
-				}
+				gameOver();
+				break;
+				//std::cout << "		play again(y):";
+				//unsigned char choice;
+				//std::cin >> choice;
+				//if (tolower(choice) == 'y') {
+				//	for (int r = 0; r < ROWS; ++r)
+				//	{
+				//		for (int c = 0; c < COLS; ++c)
+				//		{
+				//			// 初始没有固定方块
+				//			_boxes[r][c] = false;
+				//		}
+				//	}
+				//	break;
+				//}
+				//else
+				//{
+				//	exit(0);
+				//}
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
+#include<windows.h>
 #include "UIController.h"
 #include "BlackBoard.h"
 #include<string>
@@ -76,9 +77,63 @@ void UIController::OnTimer(int code)
 {
 	MoveBoxDown(); 
 }
+void UIController::gameOver()
+{
+	int msgboxID = MessageBox(
+		NULL,
+		(LPCWSTR)L"GAME OVER \nDo you want to play again?",
+		(LPCWSTR)L"GameOver",
+		MB_ICONWARNING | MB_YESNO | MB_DEFBUTTON2
+	);
+	switch (msgboxID)
+	{
+	case IDNO:
+		exit(0);
+		break;
+	case IDYES:
+		for (int r = 0; r < ROWS; ++r)
+		{
+			for (int c = 0; c < COLS; ++c)
+			{
+				// 初始没有固定方块
+				_boxes[r][c] = false;
+			}
+		}
+		break;
 
+	}
+}
+void UIController::Pause()
+{
+	int msgboxID = MessageBox(
+		NULL,
+		(LPCWSTR)L"Pausing now\nDo you want to continue?",
+		(LPCWSTR)L"Pause",
+		MB_ICONWARNING | MB_CANCELTRYCONTINUE | MB_DEFBUTTON2
+	);
+	switch (msgboxID)
+	{
+	case IDCANCEL:
+		exit(0);
+		break;
+	case IDTRYAGAIN:
+		for (int r = 0; r < ROWS; ++r)
+		{
+			for (int c = 0; c < COLS; ++c)
+			{
+				// 初始没有固定方块
+				_boxes[r][c] = false;
+			}
+		}
+		break;
+	case IDCONTINUE:
+		// TODO: add code
+		break;
+	}
+}
 void UIController::OnKey(unsigned char key, int x, int y)
 {
+
 	key = tolower(key);
 	switch (key)
 	{
@@ -100,6 +155,8 @@ void UIController::OnKey(unsigned char key, int x, int y)
 	case 'w':
 		Rotate();
 		break;
+	case 'p':
+		Pause();
 
 	}
 }
